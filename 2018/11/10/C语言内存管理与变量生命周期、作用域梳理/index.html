@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="学习笔记,Hexo, NexT">
+  <meta name="keywords" content="C,">
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="C语言的内存管理&amp;#160; &amp;#160; &amp;#160; &amp;#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。&amp;#160; &amp;#160; &amp;#160; &amp;#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。&amp;#160; &amp;#160; &amp;#160; &amp;#160;运行可执行程序，程序被">
+<meta name="keywords" content="C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://hcbdreamer.github.io/2018/11/08/hello-world/index.html">
+<meta property="og:title" content="C语言内存管理与变量生命周期、 作用域梳理">
+<meta property="og:url" content="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/index.html">
 <meta property="og:site_name" content="This is Charles Huang&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="C语言的内存管理&amp;#160; &amp;#160; &amp;#160; &amp;#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。&amp;#160; &amp;#160; &amp;#160; &amp;#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。&amp;#160; &amp;#160; &amp;#160; &amp;#160;运行可执行程序，程序被">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T10:19:12.948Z">
+<meta property="og:image" content="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/pic.png">
+<meta property="og:updated_time" content="2018-12-03T03:23:50.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="C语言内存管理与变量生命周期、 作用域梳理">
+<meta name="twitter:description" content="C语言的内存管理&amp;#160; &amp;#160; &amp;#160; &amp;#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。&amp;#160; &amp;#160; &amp;#160; &amp;#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。&amp;#160; &amp;#160; &amp;#160; &amp;#160;运行可执行程序，程序被">
+<meta name="twitter:image" content="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/pic.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://hcbdreamer.github.io/2018/11/08/hello-world/">
+  <link rel="canonical" href="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/">
 
 
 
 
 
-  <title>Hello World | This is Charles Huang's blog</title>
+  <title>C语言内存管理与变量生命周期、 作用域梳理 | This is Charles Huang's blog</title>
   
 
 
@@ -306,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcbdreamer.github.io/2018/11/08/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Charles Huang">
@@ -323,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">C语言内存管理与变量生命周期、 作用域梳理</h1>
         
 
         <div class="post-meta">
@@ -335,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T18:19:12+08:00">
-                2018-11-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T15:18:14+08:00">
+                2018-11-10
               </time>
             
 
@@ -346,6 +349,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程基础/" itemprop="url" rel="index">
+                    <span itemprop="name">编程基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -353,7 +378,7 @@
 
           
           
-             <span id="/2018/11/08/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/" class="leancloud_visitors" data-flag-title="C语言内存管理与变量生命周期、 作用域梳理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  73
+                  1.3k
                 </span>
               
 
@@ -405,7 +430,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -426,15 +451,31 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="C语言的内存管理"><a href="#C语言的内存管理" class="headerlink" title="C语言的内存管理"></a>C语言的内存管理</h1><p>&#160; &#160; &#160; &#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。<br>&#160; &#160; &#160; &#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。<br>&#160; &#160; &#160; &#160;运行可执行程序，程序被加载到内存中，除了根据已有信息分配这三个区外，还额外增加了两个区，栈区（stack）和堆（heap）区。<br>具体关系如图所示。</p>
+<p>&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160;<br><img src="/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/pic.png" alt="pic"> </p>
+<p>注：</p>
+<ol>
+<li>所有未初始化的全局变量与静态变量，编译器会默认赋初值为0；</li>
+<li>程序在加载到内存前，代码区和全局区（data与bss）的大小固定，且程序运行期间不<br>能改变；</li>
+<li>data区与bss区中数据的生命周期为整个程序运行期间；</li>
+<li>data区、bss区与text区是由编译器在编译时分配的，堆和栈实在程序运行时分配的。</li>
+</ol>
+<h1 id="变量生命周期与作用域"><a href="#变量生命周期与作用域" class="headerlink" title="变量生命周期与作用域"></a>变量生命周期与作用域</h1><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;作用域分为全局作用域、局部作用域与文件作用域。</p>
+<h2 id="1）-普通全局变量"><a href="#1）-普通全局变量" class="headerlink" title="1）    普通全局变量"></a>1）    普通全局变量</h2><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;作用域：全局作用域（只在一个源文件定义，多个源文件均可以使用，外部引用需用extern关键字声明）。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;生命周期：从编译到程序运行期间一直存在。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;内存分布：data区（初始化）与bss区（未初始化）。</p>
+<h2 id="2）-静态全局变量"><a href="#2）-静态全局变量" class="headerlink" title="2）    静态全局变量"></a>2）    静态全局变量</h2><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;作用域：文件作用域（只能在定义的文件中使用，不允许外部调用）<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;生命周期：从编译到程序运行期间一直存在。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;内存分布：data区（初始化）与bss区（未初始化）。</p>
+<h2 id="3）-普通局部变量"><a href="#3）-普通局部变量" class="headerlink" title="3）    普通局部变量"></a>3）    普通局部变量</h2><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;作用域：局部作用域。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;生命周期：从定义到程序出局部作用域即被销毁（即属于某个{}，程序执行到{即分配内存，执行到}即销毁，下次进入再重新分配。）<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;内存分布：栈区。</p>
+<h2 id="4）-静态局部变量"><a href="#4）-静态局部变量" class="headerlink" title="4）  静态局部变量"></a>4）  静态局部变量</h2><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;作用域：局部作用域。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;生命周期：从编译到程序运行期间一直存在。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;内存分布：data区（初始化）与bss区（未初始化）。</p>
+<h2 id="5）-寄存器变量"><a href="#5）-寄存器变量" class="headerlink" title="5） 寄存器变量"></a>5） 寄存器变量</h2><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;作用域：局部作用域<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;生命周期：无<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;内存分布：使用CPU的寄存器，无地址，不占用内存。</p>
+<p>注：</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;为了提高效率，C 语言允许将局部变量的值放在 CPU 中的寄存器中，这种变量叫“寄存器变量”，用关键字register作声明。<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;只有局部自动变量和形式参数可以作为寄存器变量；<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;一个计算机系统中的寄存器数目有限，不能定义任意多个寄存器变量；<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;局部静态变量不能定义为寄存器变量。</p>
+<h1 id="关于static变量使用的一些tips"><a href="#关于static变量使用的一些tips" class="headerlink" title="关于static变量使用的一些tips:"></a>关于static变量使用的一些tips:</h1><ol>
+<li>若全局变量仅在单个C文件中访问，则可以将这个变量修改为静态全局变量，以降低模<br>块间的耦合度；</li>
+<li>若全局变量仅由单个函数访问，则可以将这个变量改为该函数的静态局部变量，以降低<br>模块间的耦合度；</li>
+<li>设计和使用访问动态全局变量、静态全局变量、静态局部变量的函数时，需要考虑重入<br>问题，因为他们都放在静态数据存储区，全局可见;</li>
+<li>如果我们需要一个可重入的函数，那么，我们一定要避免函数中使用static变量(这样<br>的函数被称为：带“内部存储器”功能的的函数)；</li>
+<li>函数中必须要使用static变量情况:比如当某函数的返回值为指针类型时，则必须是<br>static的局部变量的地址作为返回值，若为auto类型，则返回为错指针。</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;全局变量和静态变量是在程序编译期就分配到data段或bss段中的，在整个程序的运行期，数据段和bss段中的内容是不会发生改变的。所以所有的全局变量和静态变量的生命周期必定是从程序编译到程序运行结束。而且如果全局变量和静态变量没有初始化，会统一默认初始化为0.<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;而局部变量是在程序的运行时，在栈中分配的内存，所以生命周期一定是从程序运行的某一个时刻开始。</p>
 
       
     </div>
@@ -455,7 +496,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://hcbdreamer.github.io/2018/11/08/hello-world/" title="Hello World">http://hcbdreamer.github.io/2018/11/08/hello-world/</a>
+    <a href="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/" title="C语言内存管理与变量生命周期、 作用域梳理">http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -468,6 +509,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C</a>
+          
+        </div>
+      
 
       
       
@@ -477,15 +524,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/08/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/" rel="prev" title="C语言内存管理与变量生命周期、 作用域梳理">
-                C语言内存管理与变量生命周期、 作用域梳理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C语言的内存管理"><span class="nav-number">1.</span> <span class="nav-text">C语言的内存管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量生命周期与作用域"><span class="nav-number">2.</span> <span class="nav-text">变量生命周期与作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1）-普通全局变量"><span class="nav-number">2.1.</span> <span class="nav-text">1）    普通全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2）-静态全局变量"><span class="nav-number">2.2.</span> <span class="nav-text">2）    静态全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3）-普通局部变量"><span class="nav-number">2.3.</span> <span class="nav-text">3）    普通局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4）-静态局部变量"><span class="nav-number">2.4.</span> <span class="nav-text">4）  静态局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5）-寄存器变量"><span class="nav-number">2.5.</span> <span class="nav-text">5） 寄存器变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于static变量使用的一些tips"><span class="nav-number">3.</span> <span class="nav-text">关于static变量使用的一些tips:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

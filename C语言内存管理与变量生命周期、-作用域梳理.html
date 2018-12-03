@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="C,">
+  <meta name="keywords" content=",">
 
 
 
@@ -81,18 +81,18 @@
 
 <meta name="description" content="C语言的内存管理&amp;#160; &amp;#160; &amp;#160; &amp;#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。&amp;#160; &amp;#160; &amp;#160; &amp;#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。&amp;#160; &amp;#160; &amp;#160; &amp;#160;运行可执行程序，程序被">
 <meta name="keywords" content="C">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="C语言内存管理与变量生命周期、 作用域梳理">
-<meta property="og:url" content="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、-作用域梳理/index.html">
+<meta property="og:url" content="http://hcbdreamer.github.io/C语言内存管理与变量生命周期、-作用域梳理.html">
 <meta property="og:site_name" content="This is Charles Huang&#39;s blog">
 <meta property="og:description" content="C语言的内存管理&amp;#160; &amp;#160; &amp;#160; &amp;#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。&amp;#160; &amp;#160; &amp;#160; &amp;#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。&amp;#160; &amp;#160; &amp;#160; &amp;#160;运行可执行程序，程序被">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、-作用域梳理/.png">
+<meta property="og:image" content="http://hcbdreamer.github.io/.png">
 <meta property="og:updated_time" content="2018-11-11T15:43:55.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言内存管理与变量生命周期、 作用域梳理">
 <meta name="twitter:description" content="C语言的内存管理&amp;#160; &amp;#160; &amp;#160; &amp;#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。&amp;#160; &amp;#160; &amp;#160; &amp;#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。&amp;#160; &amp;#160; &amp;#160; &amp;#160;运行可执行程序，程序被">
-<meta name="twitter:image" content="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、-作用域梳理/.png">
+<meta name="twitter:image" content="http://hcbdreamer.github.io/.png">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、-作用域梳理/">
+  <link rel="canonical" href="http://hcbdreamer.github.io/C语言内存管理与变量生命周期、-作用域梳理.html">
 
 
 
@@ -297,162 +297,25 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、-作用域梳理/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Charles Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wq.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="This is Charles Huang's blog">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">C语言内存管理与变量生命周期、 作用域梳理</h1>
-        
+	<h1 class="post-title" itemprop="name headline">C语言内存管理与变量生命周期、 作用域梳理</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T15:18:14+08:00">
-                2018-11-10
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程基础/" itemprop="url" rel="index">
-                    <span itemprop="name">编程基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/11/10/C语言内存管理与变量生命周期、-作用域梳理/" class="leancloud_visitors" data-flag-title="C语言内存管理与变量生命周期、 作用域梳理">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-           
-		  
-		     <span class="post-meta-divider">|</span>
-		     <span id="busuanzi_value_page_pv"></span>次阅读
-		  
-		  
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <h1 id="C语言的内存管理"><a href="#C语言的内存管理" class="headerlink" title="C语言的内存管理"></a>C语言的内存管理</h1><p>&#160; &#160; &#160; &#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。<br>&#160; &#160; &#160; &#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。<br>&#160; &#160; &#160; &#160;运行可执行程序，程序被加载到内存中，除了根据已有信息分配这三个区外，还额外增加了两个区，栈区（stack）和堆（heap）区。<br>具体关系如图所示。</p>
-<p>&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160;<img src="/2018/11/10/C语言内存管理与变量生命周期、-作用域梳理/.png" alt=""></p>
+      <div class="post-body">
+        
+        
+          <h1 id="C语言的内存管理"><a href="#C语言的内存管理" class="headerlink" title="C语言的内存管理"></a>C语言的内存管理</h1><p>&#160; &#160; &#160; &#160;C源代码经过预处理、编译、汇编与链接成为一个可执行程序。<br>&#160; &#160; &#160; &#160;C程序在运行之前，未加载到内存前，可执行程序内部已分为3部分信息，BSS区（未初始化数据区）、Data（全局初始化数据区）、Text(代码区)。<br>&#160; &#160; &#160; &#160;运行可执行程序，程序被加载到内存中，除了根据已有信息分配这三个区外，还额外增加了两个区，栈区（stack）和堆（heap）区。<br>具体关系如图所示。</p>
+<p>&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160;<img src="/.png" alt=""></p>
 <p>注：</p>
 <ol>
 <li>所有未初始化的全局变量与静态变量，编译器会默认赋初值为0；</li>
@@ -477,62 +340,15 @@
 </ol>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;全局变量和静态变量是在程序编译期就分配到data段或bss段中的，在整个程序的运行期，数据段和bss段中的内容是不会发生改变的。所以所有的全局变量和静态变量的生命周期必定是从程序编译到程序运行结束。而且如果全局变量和静态变量没有初始化，会统一默认初始化为0.<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;而局部变量是在程序的运行时，在栈中分配的内存，所以生命周期一定是从程序运行的某一个时刻开始。</p>
 
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/C/" rel="tag"># C</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/11/08/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -544,7 +360,9 @@
 
   
     <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTQyMC8xNzk2Nw=="></div>
     </div>
+
   
 
 
@@ -658,7 +476,7 @@
           
           
 
-		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=492256479&auto=1&height=66"></iframe>
+		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=492256479&auto=0&height=66"></iframe>
           
 
         </div>
@@ -901,6 +719,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
