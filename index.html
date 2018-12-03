@@ -303,6 +303,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcbdreamer.github.io/2018/12/03/《数据结构与算法分析》一一一二章学习笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Charles Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wq.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="This is Charles Huang's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/《数据结构与算法分析》一一一二章学习笔记/" itemprop="url">《数据结构与算法分析》一二章学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T20:30:16+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法与数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">算法与数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/12/03/《数据结构与算法分析》一一一二章学习笔记/" class="leancloud_visitors" data-flag-title="《数据结构与算法分析》一二章学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+           
+		  
+		  
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="第一章-引论"><a href="#第一章-引论" class="headerlink" title="第一章 引论"></a>第一章 引论</h1><h2 id="１-数学知识、公式整理"><a href="#１-数学知识、公式整理" class="headerlink" title="１.　数学知识、公式整理"></a>１.　数学知识、公式整理</h2><h3 id="（1）级数"><a href="#（1）级数" class="headerlink" title="（1）级数"></a>（1）级数</h3><p><img src="/2018/12/03/《数据结构与算法分析》一一一二章学习笔记/pic1.png" alt="pic1"></p>
+<h3 id="（2）模运算"><a href="#（2）模运算" class="headerlink" title="（2）模运算　　"></a>（2）模运算　　</h3><p>如果正整数A与B对N取模，余数相同，记为A≡B(mod N)。若A≡B(mod N)，A+C≡B+C(mod N)，并且AD≡BD(mod N)。</p>
+<h3 id="（3）证明方法"><a href="#（3）证明方法" class="headerlink" title="（3）证明方法"></a>（3）证明方法</h3><p><img src="/2018/12/03/《数据结构与算法分析》一一一二章学习笔记/pic2.png" alt="pic2"></p>
+<h3 id="（4）递归"><a href="#（4）递归" class="headerlink" title="（4）递归"></a>（4）递归</h3><p><strong>四条基本法则</strong><br> a.    基准情形。定义好不需要递归就可以求出的基准；<br> b.    不断推进。后续每一次调用需使求解情况朝接近基准情形的方向推进，像查英译<br>汉的字典一样，查一个我们不会的词的时候又在解释中碰到不认识的词，就要继续查下去，但最后，肯定有一个我们不需要查就认识的单词，此时倒退过来就能明白最初查的词的意思  。<br>  c.    设计法则。假设所有的递归调用均能运行；<br>d.    合成效益法则。因为系统每次递归是要通过开一个固定大小的不相同的内存空间的，所以尽力保证在求解同一问题的同一实例时，切勿在不同的递归调用钟做重复性的工作。</p>
+<h1 id="第二章-算法分析"><a href="#第二章-算法分析" class="headerlink" title="第二章 算法分析"></a>第二章 算法分析</h1><h2 id="1-时间复杂度"><a href="#1-时间复杂度" class="headerlink" title="1. 时间复杂度"></a>1. 时间复杂度</h2><p>   时间复杂度主要用来统计算法执行语句的次数，通过计算时间复杂度，可以判断一个算法执行的相对时间长短。<br>一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(N)表示，若有某个助函数f(N),存在一个正常数c使得f(N)*c&gt;=T(N)恒成立。记作T(N)=O(f(N)),称O(f(N)) 为算法的渐进时间复杂度，简称时间复杂度。</p>
+<p>注：<br>　　a. 有两个时间复杂度函数，Tworst(N)和Tavg(N),分别是输入为N时，算法的最坏时间复杂度（主要使用）与平均时间复杂度。<br>　　b. 时间复杂度是表示一个函数的趋势,并不代表具体值,当n趋于无穷大时,可以忽略低阶项和首项系数。</p>
+<h2 id="2-计算"><a href="#2-计算" class="headerlink" title="2. 计算"></a>2. 计算</h2><p><strong>a. 基本约定</strong><br>　　不存在特定的时间单位，假设计算机做任何一件简单工作即花费一个时间单元(声明不计时间)。<br><strong>b.一般规则</strong><br><strong>法则1：for循环</strong><br>　　对于一个循环，假设循环体的时间复杂度为 O(n)，循环次数为 m，则这个循环的时间复杂度为 O(n×m)。<br><strong>法则2：嵌套for循环</strong><br>　　对于多个循环，假设循环体的时间复杂度为 O(n)，各个循环的循环次数分别是a, b, c……，则这个循环的时间复杂度为 O(n×a×b×c……)。分析的时候应该由里向外分析这些循环。<br><strong>法则3：顺序语句</strong><br>　　对于顺序执行的语句或者算法，总的时间复杂度等于其中最大的时间复杂度。<br><strong>法则4：IF/ELSE语句</strong><br>　　对于条件判断语句，总的时间复杂度等于其中 时间复杂度最大的路径的时间复杂度。<br><strong>总结</strong><br>　　时间复杂度分析的基本策略是：从内（或最深层次）向外分析。如果有函数调用，那么这些调用要首先分析。递归也需要仔细分析。<br><strong>c.运行时间中的对数</strong><br>　　如果一个算法用常数时间（O(1)）将问题的大小削减为其一部分（通常为1/2），那么该算法就是O(logN)。另一方面，如果使用常数时间只是把时间减少了一个常数，则为O(N)。<br><strong>注：</strong> 二分法（logN）,分治法（NlogN）。</p>
+<h2 id="3-最大子序列和联机算法"><a href="#3-最大子序列和联机算法" class="headerlink" title="3. 最大子序列和联机算法"></a>3. 最大子序列和联机算法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*该算法适用于序列中至少有一个数非负的场合，时间复杂度为线性的O(N)*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MaxSubSequenceSum</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> MaxSum = <span class="number">0</span>, ThisSum = <span class="number">0</span>;    <span class="comment">//ThisSum为当前子序列和</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ThisSum += A[i];            <span class="comment">//逐个读取，逐个加</span></span><br><span class="line">		<span class="keyword">if</span> (ThisSum &gt; MaxSum)</span><br><span class="line">		&#123;</span><br><span class="line">			MaxSum = ThisSum;       <span class="comment">//当前子序列和如果比最大子序列和大，更新</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (ThisSum &lt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			ThisSum = <span class="number">0</span>;            <span class="comment">//当前子序列和小于0，即舍弃该子序列，重新开始新的子序列</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> MaxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　只对数据进行一次扫描，一旦a[i]被读入并处理，它就不再需要被记忆。因此数组可以被按顺序读入，在主存中不必存储数组的任何部分。具有这种特性的算法叫联机算法(on-line algorithm)，仅需要常量空间并以线性时间运行的联机算法几乎是完美算法！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hcbdreamer.github.io/2018/11/10/C语言内存管理与变量生命周期、作用域梳理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -720,7 +914,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -731,7 +925,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -824,7 +1018,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.4k</span>
+    <span title="Site words total count">2.5k</span>
   
 </div>
 
